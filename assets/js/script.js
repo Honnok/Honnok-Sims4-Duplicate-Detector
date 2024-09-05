@@ -21,14 +21,12 @@ function Action_s(Index, Top) {
 
 button_s.forEach((button, index) => {
     button.addEventListener("mouseover", function() {
-        // Vérifie si l'élément survolé contient une image
         if (!button.querySelector('img')) {
             Action_s(index, `${20 + index * 67}px`);
         }
     });
 });
 
-// Fonction pour afficher les résultats dans les tableaux
 // Fonction pour afficher les résultats dans les tableaux
 function displayResults(duplicates, uniqueFiles) {
     const duplicatesBody = document.getElementById('duplicatesBody');
@@ -38,10 +36,6 @@ function displayResults(duplicates, uniqueFiles) {
     duplicatesBody.innerHTML = '';
     uniqueFilesBody.innerHTML = '';
 
-    console.log('Displaying results:');
-    console.log('Duplicates:', duplicates);
-    console.log('Unique files:', uniqueFiles);
-
     // Ajouter les lignes de doublons
     duplicates.forEach(file => {
         const row = document.createElement('tr');
@@ -49,11 +43,11 @@ function displayResults(duplicates, uniqueFiles) {
             <td>${file.name}</td>
             <td>${(file.size / 1024).toFixed(2)} KB</td>
             <td>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M8 3.5a5.5 5.5 0 0 1 5.473 4.621A5.5 5.5 0 0 1 8 13.5a5.5 5.5 0 0 1-5.473-5.379A5.5 5.5 0 0 1 8 3.5zM8 5.5a3.5 3.5 0 0 0-3.486 3A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.486-3A3.5 3.5 0 0 0 8 5.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                  <path d="M1.5 0.5a.5.5 0 0 1 .707 0L8 6.293 14.793.5a.5.5 0 0 1 .707.707L8.707 7l6.793 6.793a.5.5 0 0 1-.707.707L8 7.707 1.5 14.5a.5.5 0 0 1-.707-.707L6.293 8 1.5 2.207A.5.5 0 0 1 1.5 0.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </td>
         `;
@@ -67,11 +61,11 @@ function displayResults(duplicates, uniqueFiles) {
             <td>${file.name}</td>
             <td>${(file.size / 1024).toFixed(2)} KB</td>
             <td>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M8 3.5a5.5 5.5 0 0 1 5.473 4.621A5.5 5.5 0 0 1 8 13.5a5.5 5.5 0 0 1-5.473-5.379A5.5 5.5 0 0 1 8 3.5zM8 5.5a3.5 3.5 0 0 0-3.486 3A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.486-3A3.5 3.5 0 0 0 8 5.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                  <path d="M1.5 0.5a.5.5 0 0 1 .707 0L8 6.293 14.793.5a.5.5 0 0 1 .707.707L8.707 7l6.793 6.793a.5.5 0 0 1-.707.707L8 7.707 1.5 14.5a.5.5 0 0 1-.707-.707L6.293 8 1.5 2.207A.5.5 0 0 1 1.5 0.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </td>
         `;
@@ -79,15 +73,18 @@ function displayResults(duplicates, uniqueFiles) {
     });
 }
 
+// Fonction pour afficher ou masquer le bouton Show Unique Files
+function toggleShowUniqueFilesButton(show) {
+    const button = document.getElementById('showUniqueFilesButton');
+    button.style.display = show ? 'inline-block' : 'none';
+}
+
 // Gestion de la sélection du dossier
 document.getElementById('folderInput').addEventListener('change', function(event) {
     const fileInput = event.target;
 
-    console.log('Folder input changed:', fileInput.files);
-
     if (fileInput.files.length > 0) {
         const folderName = fileInput.files[0].webkitRelativePath.split('/')[0];
-        console.log('Folder name:', folderName);
 
         if (folderName.toLowerCase() === 'mods') {
             const files = Array.from(fileInput.files);
@@ -115,21 +112,40 @@ document.getElementById('folderInput').addEventListener('change', function(event
             displayResults(duplicates, uniqueFiles);
 
             document.getElementById('folderPath').textContent = `Selected Folder: ${folderName}`;
+            toggleShowUniqueFilesButton(true); // Afficher le bouton
         } else {
             // Afficher un message d'erreur si le dossier n'est pas nommé "mods"
             document.getElementById('folderPath').textContent = 'Error: The selected folder must be named "mods".';
             document.getElementById('duplicatesBody').innerHTML = '';
             document.getElementById('uniqueFilesBody').innerHTML = '';
+            toggleShowUniqueFilesButton(false); // Masquer le bouton
         }
     } else {
         // Afficher un message si aucun dossier n'est sélectionné
         document.getElementById('folderPath').textContent = 'No folder selected';
         document.getElementById('duplicatesBody').innerHTML = '';
         document.getElementById('uniqueFilesBody').innerHTML = '';
+        toggleShowUniqueFilesButton(false); // Masquer le bouton
     }
 });
 
 // Gestion du clic sur le bouton pour sélectionner le dossier
 document.getElementById('selectFolderButton').addEventListener('click', function() {
     document.getElementById('folderInput').click();
+});
+
+document.getElementById('showUniqueFilesButton').addEventListener('click', function() {
+    const uniqueFilesBody = document.getElementById('uniqueFiles');
+    const statusImage = document.getElementById('statusImage');
+    const statusImageHidden = document.getElementById('statusImageHidden');
+
+    if (uniqueFilesBody.style.display === 'none') {
+        uniqueFilesBody.style.display = 'table-row-group';
+        statusImage.style.display = 'block'; // Affiche l'image pour l'état visible
+        statusImageHidden.style.display = 'none'; // Cache l'image pour l'état caché
+    } else {
+        uniqueFilesBody.style.display = 'none';
+        statusImage.style.display = 'none'; // Cache l'image pour l'état visible
+        statusImageHidden.style.display = 'block'; // Affiche l'image pour l'état caché
+    }
 });

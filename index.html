@@ -10,7 +10,6 @@
 
 <body>
     <div class="Contact">
-        
         <div class="MenuBox">
             <div class="TopBox"></div>
             <div class="HoverBox"></div>
@@ -66,7 +65,26 @@
                 <div class="folder-selection">
                     <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
                     <button id="selectFolderButton">Select Folder</button>
-                    <p id="folderPath">No folder selected</p>
+                    
+                    <div class="sousmenu">
+                        <div class="ShowHideSousMenu">
+                            <p>Show / Hide</p>
+                        </div>
+                        <div class="sousmenusous">
+                            <div class="uniquemenu">
+                                <button id="showUniqueFilesButton">Unique Files</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="statusImage" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#199c1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="statusImageHidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a31c17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off" style="display: none;">
+                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
                 <div class="results">
                     <div id="duplicates" class="results-box">
@@ -110,6 +128,9 @@
     </div>
     <!-- End About Box -->
     <script src="assets/js/script.js"></script>
+    <script>
+        console.log('DOM loaded');
+    </script>
 </body>
 
 </html>
